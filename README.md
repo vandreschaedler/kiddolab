@@ -3,7 +3,6 @@
 ## Instalação
 
 Clonar repositório => git@github.com:vandreschaedler/kiddolab.git
-* **Success Response:**
 
 ```sh
 cd kiddolab
