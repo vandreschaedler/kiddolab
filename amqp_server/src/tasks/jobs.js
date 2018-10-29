@@ -5,7 +5,7 @@ import csv from 'csvtojson';
 import logs from '../config/log';
 import amqp from '../amqp/sender';
 
-const EVERY_MINUTE = '*/30 * * * * *';
+const EVERY_MINUTE = '*/15 * * * * *';
 
 const getDataFromFiles = (files) => {
   function deleteFile(file) {

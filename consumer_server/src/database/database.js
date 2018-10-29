@@ -3,5 +3,5 @@ import logs from '../config/log';
 
 export default (data) => {
   logs.warn('Inserting on databse');
-  axios.post('http://localhost:3000/v1/database/insert', data);
+  axios.post('http://database_server:3001/v1/database/insert', data);
 };

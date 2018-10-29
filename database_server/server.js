@@ -9,6 +9,6 @@ const app = express();
 
 configExpress(app);
 
-app.listen(3000, () => {
+app.listen(3003, () => {
   logs.success('Server started with success!!');
 });

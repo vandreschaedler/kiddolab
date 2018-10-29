@@ -3,7 +3,7 @@ import logs from '../config/log';
 
 function connectToServer() {
   return new Promise((resolve, reject) => {
-    amqp.connect('amqp://localhost', (err, conn) => {
+    amqp.connect('amqp://rabbitmq', (err, conn) => {
       if (err) {
         logs.error(`Error on connect AMQP server => ${err}`);
         reject(err);

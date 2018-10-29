@@ -6,12 +6,12 @@ const receivedData = [];
 
 function connectToServer() {
   return new Promise((resolve, reject) => {
-    amqp.connect('amqp://localhost', (err, conn) => {
+    amqp.connect('amqp://rabbitmq', (err, conn) => {
       if (err) {
-        logs.error(`Error on connect AMQP server => ${err}`);
+        logs.error(`Error on connect Consumer server => ${err}`);
         reject(err);
       } else {
-        logs.success('AMQP server connected');
+        logs.success('Consumer server connected');
         resolve(conn);
       }
     });
@@ -25,7 +25,7 @@ function createChannel(conn) {
         logs.error(`Error on create channel => ${err}`);
         reject(err);
       } else {
-        logs.success('Channel on AMQP server created');
+        logs.success('Channel on Consumer server created');
         resolve({
           channel: ch,
           conn,
@@ -55,7 +55,7 @@ function getFromQueue(info) {
 }
 
 export default () => {
-  logs.info('Connecting on AMQP server...');
+  logs.info('Connecting on Consumer server to receive...');
   return connectToServer()
     .then(createChannel)
     .then(getFromQueue)

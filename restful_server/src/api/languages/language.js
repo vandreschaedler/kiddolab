@@ -4,10 +4,9 @@ import httpResponse from '../../tools/Http/response';
 
 const router = express.Router();
 
-const fetch = (req, res) => axios.get('http://localhost:3000/v1/database/fetch')
+const fetch = (req, res) => axios.get('http://database_server:3001/v1/database/fetch')
   .then(info => httpResponse.successRes(res, info))
   .catch(err => httpResponse.errorRes(res, err));
-
 
 router.get('/fetch', fetch);
 
